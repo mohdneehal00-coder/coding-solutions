@@ -63,30 +63,36 @@ Note: I/O will be automatically handled.
 **Language:** C  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-10-13T18:38:12.242Z  
+**Submitted:** 2026-10-14T17:09:25.286Z  
 
 ```c
 #include <stdio.h>
 
-int max_of_four(int a, int b, int c, int d) {
+int max_of_four(int a, int b, int c, int d)
+{
     int max = a;
 
     if (b > max)
         max = b;
+
     if (c > max)
         max = c;
+
     if (d > max)
         max = d;
 
     return max;
 }
 
-int main() {
+int main()
+{
     int a, b, c, d;
+
     scanf("%d %d %d %d", &a, &b, &c, &d);
 
     int ans = max_of_four(a, b, c, d);
-    printf("%d\n", ans);
+
+    printf("%d", ans);
 
     return 0;
 }
