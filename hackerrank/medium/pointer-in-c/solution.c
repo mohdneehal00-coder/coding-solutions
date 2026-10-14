@@ -1,22 +1,30 @@
 #include <stdio.h>
 
-void update(int *a, int *b) {
-    int sum = *a + *b;
-    int diff = *a - *b;
-
-    *a = sum;
-    *b = (diff < 0) ? -diff : diff;
-}
-
 int main() {
-    int a, b;
-    int *pa = &a, *pb = &b;
+    int n;
+    scanf("%d", &n);
 
-    scanf("%d %d", &a, &b);
+    int size = 2 * n - 1;
 
-    update(pa, pb);
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            int top = i;
+            int left = j;
+            int bottom = size - 1 - i;
+            int right = size - 1 - j;
 
-    printf("%d\n%d\n", a, b);
+            int min = top;
+            if (left < min) min = left;
+            if (bottom < min) min = bottom;
+            if (right < min) min = right;
+
+            printf("%d", n - min);
+
+            if (j < size - 1)
+                printf(" ");
+        }
+        printf("\n");
+    }
 
     return 0;
 }
