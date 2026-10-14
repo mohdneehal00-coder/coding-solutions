@@ -1,17 +1,14 @@
 #include <stdio.h>
 
 int main() {
-    char ch;
-    char s[100];
-    char sentence[1000];
+    int a, b;
+    float x, y;
 
-    scanf("%c", &ch);
-    scanf("%s", s);
-    scanf(" %[^\n]", sentence);
+    scanf("%d %d", &a, &b);
+    scanf("%f %f", &x, &y);
 
-    printf("%c\n", ch);
-    printf("%s\n", s);
-    printf("%s\n", sentence);
+    printf("%d %d\n", a + b, a - b);
+    printf("%.1f %.1f\n", x + y, x - y);
 
     return 0;
 }
